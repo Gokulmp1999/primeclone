@@ -1,0 +1,115 @@
+.header{
+    background-color: #0f171e;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+display:flex;
+color: aliceblue;
+height:72px;
+justify-content: space-between;
+align-items: center;
+padding: 0 36px;
+position: relative;
+
+
+z-index: 3;
+    
+}
+.container{
+    display: flex;
+}
+.logo{
+  width: 100%;
+  display: block;
+}
+.logocontainer{
+    width: 80px;
+  
+    max-height: 70px;
+    display: inline-block;
+    
+}
+.navul{
+    display: flex;
+    list-style: none;
+    
+}
+.ul-list{
+    margin: 5px;
+}
+.rightMenu{
+    right: 0;
+    position: absolute;
+    margin-right: 80px;
+}
+.right-navul{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+}
+.right-ul-list{
+    margin: 8px;
+}
+.btn {
+    display: none;
+    position: absolute;
+    left: 135px;
+   margin-right: 20px;
+    padding: 5px;
+    color: rgb(247, 242, 242);
+    cursor: pointer;
+    
+}
+@media screen and (max-width: 500px){
+    .navul {
+        flex-direction: column;
+        
+        left: -40px;
+        position: absolute;
+        width: 100%;
+        background-color: #0f171e;;
+           
+    }
+    .right-navul{
+        margin-right: -45px;
+    }
+    .right-ul-list{
+        margin: 5px;
+    }
+    .ul-list:nth-child(1){
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        
+    }
+    .ul-list {
+      
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+    }
+    .btn {
+        display: block;
+        margin-left: -5px;
+    }
+    .navmenu{
+        width: 100vw;
+        
+        top: 70px;
+        position: absolute;
+        left: 0;
+    }
+    .rightMenu{
+        right: 0;
+        position: absolute;
+        margin-right: 41px;
+    }
+}
+.icon-browser{
+    height: 11px;
+  
+}
+.icon-right{
+    margin-right: 8px;
+    cursor: pointer;
+}

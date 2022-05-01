@@ -1,0 +1,83 @@
+.Container{
+    position: relative;
+
+     height: 100vh;
+  min-height: calc(100vh-250px);
+  overflow-x: hidden;
+  display: block;
+  top: 72px;
+  padding: 0 calc(3.5vw + 5px);
+}
+.Background{
+    left: 0px;
+    opacity: 0.8;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.Backgroundimg{
+    width: 100vw;
+    height: 100vh;
+}
+.ImageTitle{
+    align-items: center;
+  
+  display: block;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  margin: 0px auto;
+  height: 30vw;
+  min-height: 170px;
+  padding-bottom: 24px;
+  width: 100%;
+}
+.ContentMett{
+    max-width: 874px;
+}
+.Controls{
+    align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 24px 0px;
+  min-height: 56px;
+}
+.Player{
+    font-size: 15px;
+  margin: 0px 22px 0px 0px;
+  padding: 0px 24px;
+  height: 56px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.8px;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb (249, 249, 249);
+  border: none;
+  color: rgb(0, 0, 0);
+}
+.AddList{
+    margin-right: 16px;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.GroupWatch{
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+}

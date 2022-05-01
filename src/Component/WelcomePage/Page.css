@@ -1,0 +1,137 @@
+.Container{
+    
+    background-color: black;
+    height: 100vh;
+    position: relative;
+    
+    color: aliceblue;
+    display: flex;
+    overflow: hidden;
+    
+    
+}
+.description{
+    max-width: 500px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    margin-top: 145px;
+    margin-left: 200px; 
+    font-size: 20px;   
+}
+.Containerimage{
+  right: 0px;
+  position: absolute;
+  height: 100vh;
+   
+    
+    
+}
+.imgWrapper{
+    max-width: 60vw;
+    height: 100%;
+}
+.Image{
+    width: 100vw;
+    height: 100%;
+   
+}
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+.Containercontent{
+   z-index: 1;
+    align-items: center;
+    justify-content: center;
+    
+}
+.button-15 {
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    border: 1px solid #0077CC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    max-width: 300px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+@media screen and (max-width: 700px){
+    .Containerimage{
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        position: absolute;
+         
+          
+          
+      }
+      .Image{
+        max-height: 37vh;
+      }
+    .Container{
+        margin: 0px;
+      display: block;
+      flex-direction: row-reverse;
+        
+    }
+    .Containercontent{
+        position: absolute;
+    bottom: 0px;
+    top: 260px;
+    font-size: 10px;
+    left: 15px;
+
+    }
+    .imgWrapper{
+        max-width: 100vw;
+        max-height: 30vh;
+      
+    }
+    .description{
+        max-width: 90vw;
+        text-align: center;
+        
+    }
+    .buttons{
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .right{
+        margin:0px;
+        align-items: center;
+        font-size: 14px;   
+    }
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    }
