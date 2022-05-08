@@ -92,6 +92,7 @@ img {
         max-height: 37vh;
       }
     .Container{
+        height: 600px;
         margin: 0px;
       display: block;
       flex-direction: row-reverse;
@@ -102,7 +103,7 @@ img {
     bottom: 0px;
     top: 260px;
     font-size: 10px;
-    left: 15px;
+  
 
     }
     .imgWrapper{

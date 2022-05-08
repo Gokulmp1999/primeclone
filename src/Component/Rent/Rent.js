@@ -10,7 +10,7 @@ function Rent() {
                 <p className="title">
                     Movie Rentals on Prime Video | Store
                 </p>
-                <p>Where you can get your ‘Early Access Ticket’ to Rent New Movies</p>
+                <p  className="child">Where you can get your ‘Early Access Ticket’ to Rent New Movies</p>
                 <button class="button-15" role="button" style={{ margin: '10px 0px' }}>Rent Now</button>
             </div>
             </div>

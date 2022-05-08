@@ -4,12 +4,17 @@ import {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCoffee,faAngleDown,faAngleUp,faMagnifyingGlass,faGlobe,faUser, faL} from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
+import { useStateValue } from '../../StateProvider';
+import { auth } from '../../Firebase/Firebase';
 
 
 
 function Header() {
+  const [{basket,user},dispatch]=useStateValue();
+
   const [toggleMenu, setToggleMenu] = useState(false);
   const [iconUser,setIconUser]=useState(false);
+  const [userlogin,setUserlogin]=useState(false)
   const [category,setCategory]=useState(false)
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
@@ -22,6 +27,9 @@ function Header() {
     setCategory(!category)
    
   }
+  const onSignOut=()=>{
+    auth.signOut();
+  }
   
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   useEffect(() => {
@@ -33,6 +41,24 @@ function Header() {
     window.addEventListener('resize', changeWidth)
 
   }, [])
+  const onStore=()=>{
+    if(user)
+    {window.location.href="/store"
+  }else{
+    window.location.href="/login"
+  }
+    
+  }
+  const onChannel=()=>{
+    if(user)
+    {window.location.href="/channel"
+  }else{
+    window.location.href="/login"
+  }
+    
+  }
+  
+  
   return (
     <div className='header'>
       <div className="container">
@@ -42,9 +68,9 @@ function Header() {
         <div className="btn" onClick={toggleNav}>Browse {!toggleMenu?<FontAwesomeIcon icon={faAngleDown} className="icon-browser"></FontAwesomeIcon>:<FontAwesomeIcon icon={faAngleUp} className="icon-browser"></FontAwesomeIcon>}</div>
         <div className="navmenu">
           {(toggleMenu || screenWidth > 500 )&&( <ul className='navul'>
-           <Link onClick={() => {window.location.href="/"}} style={{ textDecoration: 'none' ,color:'white'}}><li className='ul-list'>Home</li></Link> 
-            <Link onClick={() => {window.location.href="/store"}} style={{ textDecoration: 'none',color:'white' }}><li className='ul-list'>Store</li></Link>
-            <Link onClick={() => {window.location.href="/channel"}} style={{ textDecoration: 'none',color:'white' }}><li className='ul-list'>Channels</li></Link>
+           <Link  onClick={() => {window.location.href="/"}} style={{ textDecoration: 'none' ,color:'white'}}><li className='ul-list'>Home</li></Link> 
+            <Link onClick={onStore} style={{ textDecoration: 'none',color:'white' }}><li className='ul-list'>Store</li></Link>
+            <Link onClick={onChannel}  style={{ textDecoration: 'none',color:'white' }}><li className='ul-list'>Channels</li></Link>
             <li className='ul-list' onClick={toggleCategory}>Category{!category?<FontAwesomeIcon icon={faAngleDown} className="icon-right" style={{ height: '11px',marginLeft:'5px'}} ></FontAwesomeIcon>:<FontAwesomeIcon icon={faAngleUp} className="icon-right" style={{ height: '11px',marginLeft:'5px'}}></FontAwesomeIcon>}</li>
             <li className='ul-list'>My Stuff</li>
           </ul>)}
@@ -56,7 +82,9 @@ function Header() {
           <ul className='right-navul'>
             <li  className='right-ul-list'><FontAwesomeIcon icon={faMagnifyingGlass} className="icon-right" /></li>
             <li  className='right-ul-list'><FontAwesomeIcon icon={faGlobe} className="icon-right" ></FontAwesomeIcon>En</li>
-            <li  className='right-ul-list'onClick={toggleNavUser} ><FontAwesomeIcon icon={faUser} className="icon-right" ></FontAwesomeIcon>User{!iconUser?<FontAwesomeIcon icon={faAngleDown} className="icon-right" style={{ height: '11px',marginLeft:'5px'}} ></FontAwesomeIcon>:<FontAwesomeIcon icon={faAngleUp} className="icon-right" style={{ height: '11px',marginLeft:'5px'}}></FontAwesomeIcon>}</li>
+            <Link onClick={() => {window.location.href="/login"}} style={{ textDecoration: 'none' ,color:'white'}}><li  className='right-ul-list'onClick={toggleNavUser} ><FontAwesomeIcon icon={faUser} className="icon-right" ></FontAwesomeIcon>{user?user.displayName:"Sign-In"}{!iconUser?<FontAwesomeIcon icon={faAngleDown} className="icon-right" style={{ height: '11px',marginLeft:'5px'}} ></FontAwesomeIcon>:<FontAwesomeIcon icon={faAngleUp} className="icon-right" style={{ height: '11px',marginLeft:'5px'}}></FontAwesomeIcon>}
+            </li></Link>
+            <li  className='right-ul-list' onClick={onSignOut}>{user?"Signout":""}</li> 
           </ul>
 
         </div>
@@ -64,5 +92,6 @@ function Header() {
     </div>
   )
 }
+
 
 export default Header

@@ -1,0 +1,55 @@
+.LoginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+.LoginLogo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.logo{
+    width: 232px;
+    height: 100%;
+
+}
+.Content{
+   margin:0;
+   position: absolute;
+   top: 0;
+   color: #111;
+}
+.SignInContainer{
+    border: 1px ridge rgb(224, 221, 221);
+}
+.InputContainer{
+    display: flex;
+    margin-top: -6px;
+    flex-direction: column;
+    margin: 15px;
+}
+.inputs{
+   margin-top: 11px;
+}
+
+
+.InputContainer  > input {
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    width: 88%;
+  }
+  .InputContainer  > button {
+    height: 30px;
+    margin-bottom: 10px;
+    background: #f0c14b;
+    width: 90%;
+  }
+  .google:hover{
+cursor: pointer;
+border: 1px solid wheat;
+width: 110px;
+  }

@@ -41,6 +41,7 @@ const Detail = () => {
         })
      
   },[id])
+  
   return (
     <Container>
       
@@ -54,7 +55,7 @@ const Detail = () => {
       <Controls>
         <Player>
           <img src="/images/play-icon-black.png" alt="" />
-          <span>Play</span>
+          <span onClick={onplay}>Play</span>
         </Player>
         <Trailer>
             <img src="/images/play-icon-white.png" alt="" />

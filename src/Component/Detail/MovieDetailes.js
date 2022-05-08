@@ -8,6 +8,7 @@ import { API_KEY, imgUrl } from "../../Constants/Constants";
 
 function MovieDetailes() {
     const [detailData, setDetailData] = useState({})
+    const [play,setPlay]=useState(true)
     const [detail, setDetail] = useState();
     const [movieId, setMovieId] = useState('');
     const { id } = useParams()
@@ -45,14 +46,14 @@ function MovieDetailes() {
             <img alt={detailData.title} src={detail && `${imgUrl + detail.backdrop_path}`} className="Backgroundimg" />
         </div>
             <div className='ImageTitle'>
-                <ReactPlayer url={url} playing={true} controls={false} />
+                <ReactPlayer url={url} playing={false}  controls={false}  />
 
             </div>
             <div className="ContentMett">
                 <div className="Controls">
                     <button className="Player">
                         <img src="/images/play-icon-black.png" alt="" />
-                        <span>Play</span>
+                        <span onClick={()=>{setPlay(!play)}}>Play</span>
                     </button>
                     <button  className="Player">
                         <img src="/images/play-icon-white.png" alt="" />
